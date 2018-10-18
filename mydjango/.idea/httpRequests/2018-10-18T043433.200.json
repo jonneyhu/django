@@ -1,0 +1,19 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "url": "http://localhost:8000/users/2/",
+      "username": "admin2",
+      "email": "admin2@example.com",
+      "groups": []
+    },
+    {
+      "url": "http://localhost:8000/users/1/",
+      "username": "admin",
+      "email": "admin@expample",
+      "groups": []
+    }
+  ]
+}

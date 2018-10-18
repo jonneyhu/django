@@ -1,0 +1,72 @@
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T043433.200.json
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T041658.500.txt
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T041450.500.txt
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T040239.500.txt
+
+###
+
+GET http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T040116.500.txt
+
+###
+
+GET http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T040041.500.txt
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T035800.500.txt
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T035633.500.txt
+
+###
+
+GET http://localhost:8000
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T035614.200.json
+
+###
+
