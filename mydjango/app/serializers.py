@@ -1,30 +1,33 @@
 from django.contrib.auth.models import User,Group
 from rest_framework import serializers
-from app.models import LANGUAGE_CHOICES, STYLE_CHOICES, Snippet
+from rest_framework.relations import PrimaryKeyRelatedField
+
+from app.models import LANGUAGE_CHOICES, STYLE_CHOICES, Snippet, Book, Auth
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model=Group
         fields=('url','name')
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     # groups=GroupSerializer()
     class Meta:
         model=User
         fields=('url','username','email','groups')
 
-    # def create(self, validated_data):
-    #     groups=validated_data.pop('groups')
-    #     user=User.objects.create(**validated_data)
-    #     Group.objects.create(user=user,**groups)
-    #     return user
-    #
-    # def update(self, instance, validated_data):
-    #     group_data=validated_data.pop('groups')
-    #     instance.update(**validated_data)
-    #     instance.groups.update(**group_data)
-    #     return instance
+class BookSerializer(serializers.ModelSerializer):
+    # auth=PrimaryKeyRelatedField(queryset=Auth.objects.all())
+    class Meta:
+        model=Book
+        fields=('name','title','auth')
+
+class AuthSerializer(serializers.ModelSerializer):
+    # book=BookSerializer()
+    class Meta:
+        model=Auth
+        fields=('name','age','sex','say','book')
+
 
 
 class SnippetSerializer(serializers.Serializer):

@@ -18,11 +18,13 @@ from django.urls import path,include
 from app import views
 from rest_framework import routers
 from app import urls
-router=routers.DefaultRouter()
-router.register(r'users',views.UserViewSet)
-router.register(r'groups',views.GroupViewSet)
+# router=routers.DefaultRouter()
+# router.register(r'users',views.UserViewSet)
+# router.register(r'groups',views.GroupViewSet)
 
 urlpatterns = [
+
+    # path(r'users/<int:pk>', user_detail, name='user_detail'),
     path('',include(urls)),
     path('admin/', admin.site.urls),
     # path('',include(router.urls)),
