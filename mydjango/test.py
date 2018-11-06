@@ -10,8 +10,8 @@
 #     print(sum(gas))
 #     print(datetime.fromtimestamp(int(res['result'][0]['timeStamp'])))
 #     print(res['result'])
-#
-#
+
+
 #
 # if __name__=='__main__':
 #     get_all()
@@ -26,8 +26,8 @@ qr=QRCode(
     box_size=10,
     border=4.
 )
-qr.add_data('www.baidu.com')
+qr.add_data('http://www.baidu.com')
 qr.make(fit=True)
 img=qr.make_image()
-img.save('124.png')
 print(img)
+img.save('124.png')

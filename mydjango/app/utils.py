@@ -9,6 +9,7 @@ class Base(models.Model):
     deleted_at=models.DateTimeField('删除时间',null=True,default=None)
     def delete(self,using=None,keep_parents=False):
         self.deleted_at=timezone.now()
+        self.save()
 class Manager(models.Manager):
     def get_queryset(self):
         return super(Manager, self).get_queryset().filter(deleted_at=None)
