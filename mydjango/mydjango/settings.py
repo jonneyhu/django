@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import datetime
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -126,7 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-REST_FRAMEWORK={'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+REST_FRAMEWORK={
+               'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
                 'PAGE_SIZE':10,
 
                 # 'DEFAULT_PERMISSION_CLASSES': [
@@ -134,3 +137,14 @@ REST_FRAMEWORK={'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumber
                 # ],
 
              }
+JWT_AUTH={
+    'JWT_EXPIRATION_DELTA':datetime.timedelta(days=1),
+    'JWT_RESPONSE_PAYLOAD_HANDLER':'app.utils.jwt_response_payload_handler'
+}
+AUTH_USER_MODEL='app.User'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.163.com'
+EMAIL_PORT='25'
+EMAIL_HOST_USER='jonney849248269@163.com'
+EMAIL_HOST_PASSWORD='huyuekai9325'
+EMAIL_FROM='flyingcash'

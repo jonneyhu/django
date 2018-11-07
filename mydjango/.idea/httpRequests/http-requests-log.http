@@ -1,3 +1,159 @@
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T053755.400.json
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T045009.400.json
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T043841.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T043820.400.json
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&password2=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T043736.400.json
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&confirm=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T042734.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&confirm=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T042704.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=flyingcash&confirm=flyingcash
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T042629.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=flying&password=123456789&confirm=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T040601.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=tom&password=123456789&confirm=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T040545.400.json
+
+###
+
+POST http://localhost:8000/register/?email=849248269@qq.com&username=tom&password=123456789&confirm=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T040520.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=jonney849248269@163.com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T035220.400.json
+
+###
+
+POST http://localhost:8000/register/?email=jonney849248269@163.com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T034549.201.json
+
+###
+
+POST http://localhost:8000/register/?email=jonney849248269@163.com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T034309.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=jonney849248269@163.com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T034210.500.txt
+
+###
+
+POST http://localhost:8000/register/?email=jonney849248269@.163com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T034117.400.json
+
+###
+
+POST http://localhost:8000/register/?email=84222155@.163com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T034045.400.json
+
+###
+
+POST http://localhost:8000/register?email=84222155@.163com&username=jonney&password=123456789&confirm_password=123456789
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-07T033941.500.html
+
+###
+
 GET http://localhost:8000/users
 Accept: */*
 Cache-Control: no-cache
