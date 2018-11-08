@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+  <component name="DataSourceManagerImpl" format="xml" hash="4030195342">
     <data-source source="LOCAL" name="db" uuid="7fa95ca3-da0d-4bbe-86ec-4dadb222ed95">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
@@ -10,7 +10,7 @@
         <property name="enable_load_extension" value="true" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="flyingcash@localhost" uuid="6300926f-378c-4e07-9763-3e1ea806d4b0">
+    <data-source source="LOCAL" name="MySQL - flyingcash@localhost" uuid="cec4665d-8b4a-403e-8129-9b0a25cabfee">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

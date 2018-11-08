@@ -39,7 +39,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
             }
         }
 
-    # 手机号验证
+    # eamil验证
     def validate_email(self, value):
 
         rx = re.compile(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
