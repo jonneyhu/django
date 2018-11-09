@@ -135,16 +135,26 @@ REST_FRAMEWORK={
                 # 'DEFAULT_PERMISSION_CLASSES': [
                 #     'rest_framework.permissions.IsAdminUser',
                 # ],
+                'DEFAULT_AUTHENTICATION_CLASSES':(
+                    'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+                    'rest_framework.authentication.SessionAuthentication',
+                    'rest_framework.authentication.BasicAuthentication',
+                )
 
              }
+# 用户每次访问的认证方式定义
 JWT_AUTH={
     'JWT_EXPIRATION_DELTA':datetime.timedelta(days=1),
-    'JWT_RESPONSE_PAYLOAD_HANDLER':'app.utils.jwt_response_payload_handler'
+    'JWT_RESPONSE_PAYLOAD_HANDLER':'app.utils.jwt_response_payload.jwt_response_payload_handler'
 }
+# 用户登录认证自定义
+AUTHENTICATION_BACKENDS=['app.utils.jwt_response_payload.UserLoginBackend',]
+
 AUTH_USER_MODEL='app.User'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.163.com'
 EMAIL_PORT='25'
-EMAIL_HOST_USER='jonney849248269@163.com'
 EMAIL_HOST_PASSWORD='huyuekai9325'
-EMAIL_FROM='flyingcash'
+EMAIL_HOST_USER='jonney849248269@163.com'
+EMAIL_FROM='<jonney849248269@163.com>'
+EXTENSION_NAME=['']

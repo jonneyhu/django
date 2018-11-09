@@ -1,5 +1,5 @@
 from app.const import DepositOrWithdrawStatus, Config
-from app.utils import Base,Manager
+from app.util import Base,Manager
 from django.db import models
 class Deposit(Base):
     objects=Manager()

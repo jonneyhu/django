@@ -1,4 +1,4 @@
-from app.utils import Base,Manager
+from app.util import Base,Manager
 from django.db import models
 class Eth(Base):
     objects=Manager()

@@ -1,0 +1,16 @@
+{
+  "id": 2,
+  "last_login": null,
+  "is_superuser": false,
+  "username": "flying",
+  "first_name": "",
+  "last_name": "",
+  "email": "849248269@qq.com",
+  "is_staff": false,
+  "date_joined": "2018-11-07T08:38:41.652441Z",
+  "role_type": 0,
+  "is_active": true,
+  "is_id_verified": false,
+  "groups": [],
+  "user_permissions": []
+}
