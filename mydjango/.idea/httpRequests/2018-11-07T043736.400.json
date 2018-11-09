@@ -1,8 +1,0 @@
-{
-  "password2": [
-    "Ensure this field has no more than 8 characters."
-  ],
-  "email": [
-    "email is wrong"
-  ]
-}
