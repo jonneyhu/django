@@ -1568,7 +1568,6 @@
     <column id="360" parent="237" name="birthday">
       <Position>7</Position>
       <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="361" parent="237" name="kyc_file_type">
@@ -1592,7 +1591,6 @@
     <column id="364" parent="237" name="expire_date">
       <Position>11</Position>
       <DataType>datetime(6)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="365" parent="237" name="kyc_file">
