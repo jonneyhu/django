@@ -53,8 +53,8 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError('两次密码不一致')
-        if not check_email_code(attrs['email_code'], attrs['email'], deleted=False):
-            raise serializers.ValidationError('email verification failed')
+        # if not check_email_code(attrs['email_code'], attrs['email'], deleted=False):
+        #     raise serializers.ValidationError('email verification failed')
         return attrs
 
     def create(self, validated_data):
