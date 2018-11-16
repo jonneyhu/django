@@ -42,7 +42,9 @@ class Withdraw(Base):
                 search_filter = Q(user_profile__users__username=search)
         else:
             search_filter = ~Q(id=0)
+
         if int(type) == 0:
+
             return Withdraw.objects.filter(search_filter, Q(created_at__gte=datetime.now() - timedelta(days=14)) \
                                     , Q(status=DepositOrWithdrawStatus.submitting.value) | Q(status =\
                                     DepositOrWithdrawStatus.accepted.value)).order_by('-id')

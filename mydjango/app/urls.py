@@ -14,5 +14,6 @@ urlpatterns=[
     path(r'withdraw/',ListWithdraw.as_view()),
     path(r'withdraw/<int:pk>/',RetrieveWithdraw.as_view()),
     path(r'notification/',NotificationResource.as_view()),
+
 ]
 urlpatternsk=format_suffix_patterns(urlpatterns)

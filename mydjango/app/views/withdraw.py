@@ -4,6 +4,7 @@ from rest_framework.response import Response
 
 from app.const import DepositOrWithdrawStatus, LogType
 from app.models import Withdraw, Fee, AuditLog
+from app.models import Withdraw
 from app.serializers.withdraw import WithdrawList
 from rest_framework.permissions import IsAuthenticated
 
@@ -17,6 +18,7 @@ class ListWithdraw(ListCreateAPIView):
             print(self.request.user)
             search = self.request.GET['search']
             type = self.request.GET['type']
+
             return Withdraw.get_withdraw_by_type(search, type)
         else:
             user_id = self.request.user.id
@@ -31,8 +33,8 @@ class ListWithdraw(ListCreateAPIView):
             withdraw_sum = 0
         sum_amount = int(withdraw_sum.withdraw_sum) + int(request.data['amount'])
         if sum_amount > 1000000:
-            return Response({'message': 'Max withdrawal 10,000,00.00 AUD per day'},
-                            status=status.HTTP_406_NOT_ACCEPTABLE)
+            return Response({'message': 'Max withdrawal 10,000,00.00 AUD per day'})
+
         if int(request.data['amount'])<100:
             return Response({'message':'Min withdraw 100 AUD per day'},status=status.HTTP_406_NOT_ACCEPTABLE)
         self.perform_create(serializer)
@@ -41,15 +43,17 @@ class ListWithdraw(ListCreateAPIView):
             pass
         if is_mail_active:
             pass
+        self.perform_create(serializer)
+
         return Response(serializer.data)
     def perform_create(self, serializer):
         serializer.save(user_profile=self.request.user.profile)
-
 
 class RetrieveWithdraw(RetrieveUpdateDestroyAPIView):
     queryset = Withdraw.objects.all()
     serializer_class = WithdrawList
     permission_classes = [IsAuthenticated]
+
     def update(self, request, *args, **kwargs):
         withdraw=self.get_object()
         if withdraw.status ==DepositOrWithdrawStatus.submitting.value:
