@@ -13,8 +13,9 @@ class ListWithdraw(ListCreateAPIView):
 
     def get_queryset(self):
         if self.request.user.is_admin():
-            search = self.request.data['query']
-            type = self.request.data['type']
+            print(self.request.user)
+            search = self.request.GET['search']
+            type = self.request.GET['type']
             return Withdraw.get_withdraw_by_type(search, type)
         else:
             user_id = self.request.user.id

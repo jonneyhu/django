@@ -1,13 +1,13 @@
-AssertionError at /withdraw/
-`create()` did not return an object instance.
+ValueError at /withdraw/
+invalid literal for int() with base 10: ''
 
-Request Method: POST
-Request URL: http://localhost:8000/withdraw/
+Request Method: GET
+Request URL: http://localhost:8000/withdraw/?username=flying4&password=flyingcash&email=842482169%40qq.com&password2=flyingcash&email_code=124567&search=&type=&amount=12000
 Django Version: 2.1.2
 Python Executable: /home/jonney/.virtualenvs/mydjango/bin/python
 Python Version: 3.6.5
 Python Path: ['/home/jonney/PycharmProjectsm/django/mydjango', '/home/jonney/.virtualenvs/mydjango/lib/python36.zip', '/home/jonney/.virtualenvs/mydjango/lib/python3.6', '/home/jonney/.virtualenvs/mydjango/lib/python3.6/lib-dynload', '/usr/lib/python3.6', '/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages', '/home/jonney/PycharmProjectsm/django/mydjango']
-Server time: Thu, 15 Nov 2018 07:18:27 +0000
+Server time: Fri, 16 Nov 2018 01:53:53 +0000
 Installed Applications:
 ['django.contrib.admin',
  'django.contrib.auth',
@@ -54,34 +54,34 @@ File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framew
 File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/views.py" in dispatch
   480.             response = handler(request, *args, **kwargs)
 
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/generics.py" in post
-  244.         return self.create(request, *args, **kwargs)
+File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/generics.py" in get
+  241.         return self.list(request, *args, **kwargs)
 
-File "/home/jonney/PycharmProjectsm/django/mydjango/app/views/withdraw.py" in create
-  30.         self.perform_create(serializer)
+File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/mixins.py" in list
+  40.         queryset = self.filter_queryset(self.get_queryset())
 
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/mixins.py" in perform_create
-  26.         serializer.save()
+File "/home/jonney/PycharmProjectsm/django/mydjango/app/views/withdraw.py" in get_queryset
+  19.             return Withdraw.get_withdraw_by_type(search, type)
 
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in save
-  216.                 '`create()` did not return an object instance.'
+File "/home/jonney/PycharmProjectsm/django/mydjango/app/models/withdraw.py" in get_withdraw_by_type
+  45.         if int(type) == 0:
 
-Exception Type: AssertionError at /withdraw/
-Exception Value: `create()` did not return an object instance.
+Exception Type: ValueError at /withdraw/
+Exception Value: invalid literal for int() with base 10: ''
 Request information:
 USER: flying4
 
-GET: No GET data
-
-POST:
+GET:
 username = 'flying4'
 password = 'flyingcash'
 email = '842482169@qq.com'
 password2 = 'flyingcash'
 email_code = '124567'
 search = ''
-type = '0'
-amount = '10000'
+type = ''
+amount = '12000'
+
+POST: No POST data
 
 FILES: No FILES data
 
@@ -91,8 +91,8 @@ META:
 BASH_FUNC_generate_command_executed_sequence%% = "() {  printf '\\e\\7'\n}"
 CLUTTER_IM_MODULE = 'xim'
 COLORTERM = 'truecolor'
-CONTENT_LENGTH = '128'
-CONTENT_TYPE = 'application/x-www-form-urlencoded; charset=UTF-8'
+CONTENT_LENGTH = ''
+CONTENT_TYPE = 'text/plain'
 DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
 DEFAULTS_PATH = '/usr/share/gconf/ubuntu.default.path'
 DESKTOP_SESSION = 'ubuntu'
@@ -106,8 +106,8 @@ GJS_DEBUG_OUTPUT = 'stderr'
 GJS_DEBUG_TOPICS = 'JS ERROR;JS LOG'
 GNOME_DESKTOP_SESSION_ID = 'this-is-deprecated'
 GNOME_SHELL_SESSION_MODE = 'ubuntu'
-GNOME_TERMINAL_SCREEN = '/org/gnome/Terminal/screen/aad436e0_c000_4967_8b8c_388dcc8a605b'
-GNOME_TERMINAL_SERVICE = ':1.85'
+GNOME_TERMINAL_SCREEN = '/org/gnome/Terminal/screen/21917e4a_3698_4a60_84ed_3a6a99545e98'
+GNOME_TERMINAL_SERVICE = ':1.157'
 GPG_AGENT_INFO = '/run/user/1000/gnupg/S.gpg-agent:0:1'
 GTK_IM_MODULE = 'fcitx'
 GTK_MODULES = 'gail:atk-bridge'
@@ -146,10 +146,10 @@ PWD = '/home/jonney/PycharmProjectsm/django/mydjango'
 QT4_IM_MODULE = 'fcitx'
 QT_ACCESSIBILITY = '1'
 QT_IM_MODULE = 'fcitx'
-QUERY_STRING = ''
+QUERY_STRING = 'username=flying4&password=flyingcash&email=842482169%40qq.com&password2=flyingcash&email_code=124567&search=&type=&amount=12000'
 REMOTE_ADDR = '127.0.0.1'
 REMOTE_HOST = ''
-REQUEST_METHOD = 'POST'
+REQUEST_METHOD = 'GET'
 RUBY_VERSION = 'ruby-2.4.2'
 RUN_MAIN = 'true'
 SCRIPT_NAME = ''
@@ -157,10 +157,10 @@ SERVER_NAME = 'localhost'
 SERVER_PORT = '8000'
 SERVER_PROTOCOL = 'HTTP/1.1'
 SERVER_SOFTWARE = 'WSGIServer/0.2'
-SESSION_MANAGER = 'local/jonney-Home:@/tmp/.ICE-unix/1774,unix/jonney-Home:/tmp/.ICE-unix/1774'
+SESSION_MANAGER = 'local/jonney-Home:@/tmp/.ICE-unix/14588,unix/jonney-Home:/tmp/.ICE-unix/14588'
 SHELL = '/bin/bash'
 SHLVL = '2'
-SSH_AGENT_PID = '1928'
+SSH_AGENT_PID = '14225'
 SSH_AUTH_SOCK = '/run/user/1000/keyring/ssh'
 S_COLORS = 'auto'
 TERM = 'xterm-256color'
@@ -185,7 +185,7 @@ XDG_MENU_PREFIX = 'gnome-'
 XDG_RUNTIME_DIR = '/run/user/1000'
 XDG_SEAT = 'seat0'
 XDG_SESSION_DESKTOP = 'ubuntu'
-XDG_SESSION_ID = '2'
+XDG_SESSION_ID = '8'
 XDG_SESSION_TYPE = 'x11'
 XDG_VTNR = '2'
 XMODIFIERS = '@im=fcitx'
@@ -203,7 +203,7 @@ rvm_user_install_flag = '1'
 rvm_version = '1.29.4 (latest)'
 wsgi.errors = <_io.TextIOWrapper name='<stderr>' mode='w' encoding='UTF-8'>
 wsgi.file_wrapper = ''
-wsgi.input = <_io.BufferedReader name=5>
+wsgi.input = <_io.BufferedReader name=3>
 wsgi.multiprocess = False
 wsgi.multithread = True
 wsgi.run_once = False
