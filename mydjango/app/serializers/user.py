@@ -83,16 +83,11 @@ class CreateUserSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
-        if instance:
-            if not check_email_code(validated_data['code'], validated_data['email'], deleted=False):
-                return Response({'message': 'code is wrong'}, status=status.HTTP_406_NOT_ACCEPTABLE)
-            else:
-                del validated_data['code']
-                del validated_data['email']
-                instance.set_password(validated_data['password'])
-                instance.save()
-                return Response({'message': 'update successfully'}, status=status.HTTP_205_RESET_CONTENT)
-        return Response({'message': 'email not exsits'}, status=status.HTTP_400_BAD_REQUEST)
+        del validated_data['code']
+        del validated_data['email']
+        instance.set_password(validated_data['password'])
+        instance.save()
+        return instance
 
 
 class UserDetailSerializer(serializers.ModelSerializer):
@@ -112,9 +107,9 @@ class UserDetailSerializer(serializers.ModelSerializer):
                          }
                          }
         }
-
-    def update(self, instance, validated_data):
-        if instance.check_password(validated_data['password']):
-            instance.set_password(validated_data['newpassword'])
-            return instance
-        return Response({'message': 'password is wrong'}, status=status.HTTP_406_NOT_ACCEPTABLE)
+    #
+    # def update(self, instance, validated_data):
+    #     if instance.check_password(validated_data['password']):
+    #         instance.set_password(validated_data['newpassword'])
+    #         return instance
+    #     return Response({'message': 'password is wrong'}, status=status.HTTP_406_NOT_ACCEPTABLE)

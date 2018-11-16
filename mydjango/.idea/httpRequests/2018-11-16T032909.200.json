@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "created_at": "2018-11-16T07:21:10.892363Z",
+    "updated_at": "2018-11-16T07:21:10.892399Z",
+    "deleted_at": null,
+    "operate": 0,
+    "is_sms_active": true,
+    "is_mail_active": true,
+    "profile_id": 2
+  },
+  {
+    "id": 3,
+    "created_at": "2018-11-16T07:21:10.897789Z",
+    "updated_at": "2018-11-16T07:21:10.897826Z",
+    "deleted_at": null,
+    "operate": 1,
+    "is_sms_active": true,
+    "is_mail_active": false,
+    "profile_id": 2
+  },
+  {
+    "id": 4,
+    "created_at": "2018-11-16T07:21:10.902246Z",
+    "updated_at": "2018-11-16T07:21:10.902290Z",
+    "deleted_at": null,
+    "operate": 2,
+    "is_sms_active": true,
+    "is_mail_active": true,
+    "profile_id": 2
+  }
+]

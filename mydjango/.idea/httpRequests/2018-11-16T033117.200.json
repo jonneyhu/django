@@ -1,0 +1,17 @@
+[
+  {
+    "operate": 0,
+    "is_sms_active": true,
+    "is_mail_active": true
+  },
+  {
+    "operate": 1,
+    "is_sms_active": true,
+    "is_mail_active": false
+  },
+  {
+    "operate": 2,
+    "is_sms_active": true,
+    "is_mail_active": true
+  }
+]

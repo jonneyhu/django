@@ -60,5 +60,9 @@ class Withdraw(Base):
         withdraw_sum=Withdraw.objects.annotate(withdraw_sum=Sum('amount')).filter(created_at__gte=zero_time,user_profile__users__id=user_id)
         return withdraw_sum
 
+    def is_exsit_txid(self,txid):
+        return Withdraw.objects.filter(blcokchain_txid=txid)
+    def is_exsit_bank_txid(self,bank_txid):
+        return Withdraw.objects.filter(bank_txid=bank_txid)
 
 

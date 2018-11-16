@@ -1,13 +1,13 @@
-AssertionError at /withdraw/
-The field 'user' was declared on serializer WithdrawList, but has not been included in the 'fields' option.
+TypeError at /notification/
+'builtin_function_or_method' object is not subscriptable
 
-Request Method: GET
-Request URL: http://localhost:8000/withdraw/?username=flying4&password=flyingcash&email=842482169%40qq.com&password2=flyingcash&email_code=124567&search=&type=0&amount=10000000000
+Request Method: POST
+Request URL: http://localhost:8000/notification/
 Django Version: 2.1.2
 Python Executable: /home/jonney/.virtualenvs/mydjango/bin/python
 Python Version: 3.6.5
 Python Path: ['/home/jonney/PycharmProjectsm/django/mydjango', '/home/jonney/.virtualenvs/mydjango/lib/python36.zip', '/home/jonney/.virtualenvs/mydjango/lib/python3.6', '/home/jonney/.virtualenvs/mydjango/lib/python3.6/lib-dynload', '/usr/lib/python3.6', '/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages', '/home/jonney/PycharmProjectsm/django/mydjango']
-Server time: Thu, 15 Nov 2018 09:28:16 +0000
+Server time: Fri, 16 Nov 2018 07:15:20 +0000
 Installed Applications:
 ['django.contrib.admin',
  'django.contrib.auth',
@@ -54,58 +54,26 @@ File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framew
 File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/views.py" in dispatch
   480.             response = handler(request, *args, **kwargs)
 
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/generics.py" in get
-  241.         return self.list(request, *args, **kwargs)
+File "/home/jonney/PycharmProjectsm/django/mydjango/app/views/notification.py" in post
+  25.             if len(l) != 3 or int(l[0]) not in (0, 1, 2) or int(l[1]) not in (0, 1) or int(len[2]) not in (0, 1):
 
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/mixins.py" in list
-  45.             return self.get_paginated_response(serializer.data)
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in data
-  765.         ret = super(ListSerializer, self).data
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in data
-  262.                 self._data = self.to_representation(self.instance)
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in to_representation
-  683.             self.child.to_representation(item) for item in iterable
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in <listcomp>
-  683.             self.child.to_representation(item) for item in iterable
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in to_representation
-  510.         fields = self._readable_fields
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/django/utils/functional.py" in __get__
-  37.         res = instance.__dict__[self.name] = self.func(instance)
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in _readable_fields
-  376.             field for field in self.fields.values()
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in fields
-  363.             for key, value in self.get_fields().items():
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in get_fields
-  1020.         field_names = self.get_field_names(declared_fields, info)
-
-File "/home/jonney/.virtualenvs/mydjango/lib/python3.6/site-packages/rest_framework/serializers.py" in get_field_names
-  1121.                         serializer_class=self.__class__.__name__
-
-Exception Type: AssertionError at /withdraw/
-Exception Value: The field 'user' was declared on serializer WithdrawList, but has not been included in the 'fields' option.
+Exception Type: TypeError at /notification/
+Exception Value: 'builtin_function_or_method' object is not subscriptable
 Request information:
 USER: flying4
 
-GET:
+GET: No GET data
+
+POST:
 username = 'flying4'
 password = 'flyingcash'
 email = '842482169@qq.com'
 password2 = 'flyingcash'
 email_code = '124567'
 search = ''
-type = '0'
-amount = '10000000000'
-
-POST: No POST data
+type = '2'
+amount = '12000'
+notifications = '[0_1_1,1_1_0,2_1_1]'
 
 FILES: No FILES data
 
@@ -115,8 +83,8 @@ META:
 BASH_FUNC_generate_command_executed_sequence%% = "() {  printf '\\e\\7'\n}"
 CLUTTER_IM_MODULE = 'xim'
 COLORTERM = 'truecolor'
-CONTENT_LENGTH = ''
-CONTENT_TYPE = 'text/plain'
+CONTENT_LENGTH = '170'
+CONTENT_TYPE = 'application/x-www-form-urlencoded; charset=UTF-8'
 DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
 DEFAULTS_PATH = '/usr/share/gconf/ubuntu.default.path'
 DESKTOP_SESSION = 'ubuntu'
@@ -130,15 +98,15 @@ GJS_DEBUG_OUTPUT = 'stderr'
 GJS_DEBUG_TOPICS = 'JS ERROR;JS LOG'
 GNOME_DESKTOP_SESSION_ID = 'this-is-deprecated'
 GNOME_SHELL_SESSION_MODE = 'ubuntu'
-GNOME_TERMINAL_SCREEN = '/org/gnome/Terminal/screen/aad436e0_c000_4967_8b8c_388dcc8a605b'
-GNOME_TERMINAL_SERVICE = ':1.85'
+GNOME_TERMINAL_SCREEN = '/org/gnome/Terminal/screen/21917e4a_3698_4a60_84ed_3a6a99545e98'
+GNOME_TERMINAL_SERVICE = ':1.157'
 GPG_AGENT_INFO = '/run/user/1000/gnupg/S.gpg-agent:0:1'
 GTK_IM_MODULE = 'fcitx'
 GTK_MODULES = 'gail:atk-bridge'
 HOME = '/home/jonney'
 HTTP_ACCEPT = '*/*'
 HTTP_ACCEPT_ENCODING = 'gzip,deflate'
-HTTP_AUTHORIZATION = 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImZseWluZzQiLCJleHAiOjE1NDIzNDg4OTUsImVtYWlsIjoiODQyNDgyMTY5QHFxLmNvbSJ9.PLx3px5wVo87pYX2TsA5zPUodtzyNwYOxdJQXCuxW3A'
+HTTP_AUTHORIZATION = 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImZseWluZzQiLCJleHAiOjE1NDI0Mzg0NDAsImVtYWlsIjoiODQyNDgyMTY5QHFxLmNvbSJ9.mXXO6QzJ35h6jo4HiCjvQ_o_eDKofHE0tkNZwj06jC8'
 HTTP_CACHE_CONTROL = 'no-cache'
 HTTP_CONNECTION = 'Keep-Alive'
 HTTP_HOST = 'localhost:8000'
@@ -164,16 +132,16 @@ MANDATORY_PATH = '/usr/share/gconf/ubuntu.mandatory.path'
 MY_RUBY_HOME = '/home/jonney/.rvm/rubies/ruby-2.4.2'
 OLDPWD = '/home/jonney/pycharm-2018.2.1/bin'
 PATH = '/home/jonney/.virtualenvs/mydjango/bin:/home/jonney/.cargo/bin:/home/jonney/.local/bin:/home/jonney/.rvm/gems/ruby-2.4.2/bin:/home/jonney/.rvm/gems/ruby-2.4.2@global/bin:/home/jonney/.rvm/rubies/ruby-2.4.2/bin:/home/jonney/.cargo/bin:/home/jonney/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/jonney/.rvm/bin:/home/jonney/.rvm/bin:/home/jonney/.rvm/bin:/home/jonney/.rvm/bin:/home/jonney/.rvm/bin:/home/jonney/.rvm/bin'
-PATH_INFO = '/withdraw/'
+PATH_INFO = '/notification/'
 PS1 = '(mydjango) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ '
 PWD = '/home/jonney/PycharmProjectsm/django/mydjango'
 QT4_IM_MODULE = 'fcitx'
 QT_ACCESSIBILITY = '1'
 QT_IM_MODULE = 'fcitx'
-QUERY_STRING = 'username=flying4&password=flyingcash&email=842482169%40qq.com&password2=flyingcash&email_code=124567&search=&type=0&amount=10000000000'
+QUERY_STRING = ''
 REMOTE_ADDR = '127.0.0.1'
 REMOTE_HOST = ''
-REQUEST_METHOD = 'GET'
+REQUEST_METHOD = 'POST'
 RUBY_VERSION = 'ruby-2.4.2'
 RUN_MAIN = 'true'
 SCRIPT_NAME = ''
@@ -181,10 +149,10 @@ SERVER_NAME = 'localhost'
 SERVER_PORT = '8000'
 SERVER_PROTOCOL = 'HTTP/1.1'
 SERVER_SOFTWARE = 'WSGIServer/0.2'
-SESSION_MANAGER = 'local/jonney-Home:@/tmp/.ICE-unix/1774,unix/jonney-Home:/tmp/.ICE-unix/1774'
+SESSION_MANAGER = 'local/jonney-Home:@/tmp/.ICE-unix/14588,unix/jonney-Home:/tmp/.ICE-unix/14588'
 SHELL = '/bin/bash'
 SHLVL = '2'
-SSH_AGENT_PID = '1928'
+SSH_AGENT_PID = '14225'
 SSH_AUTH_SOCK = '/run/user/1000/keyring/ssh'
 S_COLORS = 'auto'
 TERM = 'xterm-256color'
@@ -209,7 +177,7 @@ XDG_MENU_PREFIX = 'gnome-'
 XDG_RUNTIME_DIR = '/run/user/1000'
 XDG_SEAT = 'seat0'
 XDG_SESSION_DESKTOP = 'ubuntu'
-XDG_SESSION_ID = '2'
+XDG_SESSION_ID = '8'
 XDG_SESSION_TYPE = 'x11'
 XDG_VTNR = '2'
 XMODIFIERS = '@im=fcitx'
