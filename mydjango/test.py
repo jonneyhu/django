@@ -29,5 +29,5 @@ qr=QRCode(
 qr.add_data('http://www.baidu.com')
 qr.make(fit=True)
 img=qr.make_image()
-print(img)
+print('hello')
 img.save('124.png')
